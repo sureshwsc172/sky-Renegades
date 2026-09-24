@@ -23,8 +23,10 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
+    - name: Create local.properties
+      run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+
     - name: Build Debug APK
-      env:
-        ANDROID_HOME: /usr/local/lib/android/sdk
-      run: ./gradlew assembleDebug --stacktrace --info
+      run: ./gradlew assembleDebug -x test --continue
+
 
