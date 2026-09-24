@@ -26,5 +26,5 @@ jobs:
     - name: Build Debug APK
       env:
         ANDROID_HOME: /usr/local/lib/android/sdk
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleDebug --stacktrace --info
 
